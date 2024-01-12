@@ -5,14 +5,14 @@ set LOGFILE /var/log/reboot-rg.log
 
 log_file -a $LOGFILE
 
-spawn telnet 192.168.2.21
+spawn telnet <IP Address to PDU>
 
 send_log "\n[exec date] Starting Reboot Script\n"
 
 # TELNET TO WTI PDU
 send_log "\n[exec date] Logging into PDU\n"
 expect "Password:"
-send "redhat1\r"
+send "<your password here>\r"
 sleep 2
 
 # TURN OFF PLUG 6
